@@ -4,7 +4,7 @@ function searchRepositories() {
   $.get(`https://api.github.com/search/repositories?q=${search}`).fail(displayError)
 }
 
-function displayRepositories() {
+function showCommits() {
   let repos = JSON.parse(this.responseText)
   let list = repos.map(r => {
     return `<li><a href=${r.html_url}>${r.name}</a> -
@@ -19,12 +19,6 @@ function displayRepositories() {
   }).join('')
   let repoList = `<ul>${list}</ul>`
 
-function showCommits(){
-   let show = document.getElementById("searchTerms").value
-
-  $.get(`https://api.github.com/search/repositories?q=${search}`).fail(displayError)
-  
-}
 
 function displayError() {
   $("#errors").html("I'm sorry, there's been an error. Please try again.")
