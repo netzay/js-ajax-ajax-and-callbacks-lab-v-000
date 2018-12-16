@@ -19,14 +19,17 @@ function displayRepositories() {
   }).join('')
   let repoList = `<ul>${list}</ul>`
 
+function showCommits(){
+  
+}
+
+function displayError() {
+  $("#errors").html("I'm sorry, there's been an error. Please try again.")
+}
   document.getElementById("repositories").innerHTML = repoList
 }
 
 $(document).ready(function (){
 });
-function showCommits(){
-  
-}
-function displayError() {
-  $("#errors").html("I'm sorry, there's been an error. Please try again.")
-}
+
+
