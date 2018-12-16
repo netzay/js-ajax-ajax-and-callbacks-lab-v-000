@@ -20,6 +20,9 @@ function displayRepositories() {
   let repoList = `<ul>${list}</ul>`
 
 function showCommits(){
+   let show = document.getElementById("searchTerms").value
+
+  $.get(`https://api.github.com/search/repositories?q=${search}`).fail(displayError)
   
 }
 
